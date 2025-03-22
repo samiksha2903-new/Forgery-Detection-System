@@ -5,11 +5,13 @@ import HomePage from './components/HomePage';
 import HistoryPage from './components/HistoryPage';
 import UploadPage from './components/UploadPage';
 import FakeDocumentDetection from './components/FakeDocumentDetection';
+import NavBar from './components/NavBar';
 
 const App = () => {
     return (
         <Router>
             <div className="App">
+                <NavBar />
                 <h1>Document Forgery Detection System</h1>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
