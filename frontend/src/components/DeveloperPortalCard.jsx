@@ -1,36 +1,30 @@
-import React, { useState } from 'react';
-import { features } from '../data/data.js';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const DeveloperPortalCard = () => {
-    const [isDocUpload, setIsDocUpload] = useState(false);
-    
-    return (
-        <div className="text-center p-5 bg-gray-100 min-h-screen">
-            <h1 className="text-purple-600 text-3xl font-bold">Developer Portal</h1>
-            <h2 className="text-xl text-gray-700 mb-6">Welcome To The Developer Portal Playground!</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {features.map((feature, index) => (
-                    <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:-translate-y-2">
-                        <div className="text-4xl mb-3">🔍</div>
-                        <h3 className="text-lg font-semibold text-gray-900">{feature.title}</h3>
-                        <p className="text-sm text-gray-600 mb-4">{feature.description}</p>
-                        {isDocUpload ? (
-                            <Link to="/fake-document-detection">
-                                <button className="bg-white text-purple-600 border-2 border-purple-600 px-4 py-2 rounded-md text-sm transition-all hover:bg-purple-600 hover:text-white">
-                                    Try For Demo
-                                </button>
-                            </Link>
-                        ) : (
-                            <button className="bg-white text-purple-600 border-2 border-purple-600 px-4 py-2 rounded-md text-sm transition-all hover:bg-purple-600 hover:text-white">
-                                Try For Demo
-                            </button>
-                        )}
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
-}
+const HomePage = () => {
+  const cards = [
+    { title: "Aadhar Verification", description: "Checks for presentation attacks like picture and replay attack.", icon: "📜", color: "#7C3AED" },
+    { title: "VoterID Verification", description: "Analyzes document metadata and checks for forgery.", icon: "🆔", color: "#F59E0B" },
+    { title: "Electricity Bill Verification", description: "Detects age and gender from the image.", icon: "🔌", color: "#2563EB" },
+  ];
 
-export default DeveloperPortalCard;
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-blue-900 to-purple-900 text-white flex flex-col items-center">
+      <div className="flex gap-8 mt-24 flex-wrap justify-center">
+        {cards.map((card, index) => (
+          <div key={index} className="bg-white p-6 rounded-2xl shadow-lg transition-transform transform hover:scale-105 w-80 text-center border-t-4" style={{ borderColor: card.color }}>
+            <div className="text-5xl mb-4" style={{ color: card.color }}>{card.icon}</div>
+            <h2 className="text-xl font-bold text-black">{card.title}</h2>
+            <p className="text-gray-600 mt-2">{card.description}</p>
+            <Link to="/fake-document-detection">
+              <button className="mt-4 px-4 py-2 text-white rounded-lg" style={{ backgroundColor: card.color }}>
+                Verify
+              </button>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default HomePage;

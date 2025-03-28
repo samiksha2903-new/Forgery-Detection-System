@@ -12,7 +12,6 @@ const App = () => {
         <Router>
             <div className="App">
                 <NavBar />
-                <h1>Document Forgery Detection System</h1>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/upload" element={<UploadPage />} />
