@@ -2,19 +2,19 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import HistoryPage from './components/HistoryPage';
-import FakeDocumentDetection from './components/FakeDocumentDetection';
+import FakeDocumentDetection from './components/DocVerification';
 import NavBar from './components/NavBar';
+import AddGenuineDoc from './components/Add-Genuine';
 
 const App = () => {
     return (
         <Router>
-            <div className="App">
+            <div>
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/upload" element={<FakeDocumentDetection />} />
-                    <Route path="/history" element={<HistoryPage />} />
+                    <Route path="/add-genuine" element={<AddGenuineDoc />} />
                 </Routes>
             </div>
         </Router>
