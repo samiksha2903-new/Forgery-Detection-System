@@ -4,10 +4,10 @@ import axios from "axios";
 function AddGenuineDocument() {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState("");
+  const [preview, setPreview] = useState(null);
 
   const handleFile = (e) => {
     setFile(e.target.files[0]);
-    console.log(e.target.files[0]);
   };
 
   const handleSubmit = async (e) => {

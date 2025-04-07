@@ -13,7 +13,7 @@ const HomePage = () => {
             <div className="text-5xl mb-4" style={{ color: card.color }}>{card.icon}</div>
             <h2 className="text-xl font-bold text-black">{card.title}</h2>
             <p className="text-gray-600 mt-2">{card.description}</p>
-            <Link to="/upload">
+            <Link to="/verify">
               <button className="mt-4 px-4 py-2 text-white rounded-lg" style={{ backgroundColor: card.color }}>
                 Verify
               </button>
